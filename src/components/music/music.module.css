@@ -1,0 +1,54 @@
+.music { isolation: isolate; overflow: clip; padding-block: clamp(4rem, 7vw, 7rem) clamp(4rem, 6vw, 6rem); position: relative; }
+.music::before { background: linear-gradient(180deg, #0a0908, #050505 20%, #050505 72%, rgb(5 5 5 / 72%) 87%, transparent); clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0 100%); content: ""; inset: 0; position: absolute; z-index: -1; }
+.inner { margin-inline: auto; max-width: 1280px; width: 90%; }
+.music .heading { margin: 0 0 var(--section-title-gap); }
+.releases { display: grid; gap: clamp(0.75rem, 2vw, 1.5rem); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.release { min-width: 0; position: relative; }
+.visuallyHidden { clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.artwork { aspect-ratio: 1; overflow: clip; width: 100%; }
+.cover { display: block; height: 100%; object-fit: contain; width: 100%; }
+.actions { align-items: stretch; background: linear-gradient(transparent, rgb(0 0 0 / 88%) 25%); bottom: 0; color: #fff; display: grid; gap: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); left: 0; padding-block: 0.25rem; position: absolute; right: 0; }
+.actions a { align-items: center; color: #fff; display: flex; flex-direction: column; font-size: 0.75rem; gap: 0.125rem; justify-content: center; line-height: 1.25; min-height: 44px; min-width: 44px; padding: 0.125rem; text-decoration: none; }
+.actions svg { flex-shrink: 0; height: 20px; width: 20px; }
+.actions span { max-width: 100%; overflow-wrap: anywhere; }
+.actions a:hover { background: rgb(255 255 255 / 12%); }
+.actions a:focus-visible { background: #17100b; outline: 2px solid #fbe5b2; outline-offset: -3px; }
+
+@media (max-width: 767px) {
+	.inner { width: calc(100% - 2.5rem); }
+}
+@media (min-width: 1024px) {
+	.releases { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+	.actions { align-content: center; background: transparent; bottom: 0; gap: 0.75rem; grid-template-columns: 1fr; opacity: 0; padding: 1.25rem; pointer-events: none; top: 0; }
+	.actions a { background: rgb(0 0 0 / 68%); flex-direction: row; font-size: 1rem; gap: 0.75rem; padding: 0.5rem; }
+	.actions svg { height: 24px; width: 24px; }
+	.release:hover .cover, .release:focus-within .cover { filter: blur(5px) brightness(0.45); }
+	.release:hover .actions, .release:focus-within .actions { opacity: 1; pointer-events: auto; }
+	.actions a:hover { background: rgb(0 0 0 / 90%); }
+}
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+	.cover { transition: filter 180ms ease-out; }
+	.actions { transition: opacity 180ms ease-out; }
+}
+
+.specialVideo { align-items: center; background: linear-gradient(115deg, #17120e, #100e0c); border: 1px solid rgb(183 139 84 / 35%); display: grid; gap: clamp(1.25rem, 3vw, 2.5rem); grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); margin: clamp(2rem, 4vw, 3.5rem) auto 0; max-width: 980px; min-width: 0; padding: clamp(0.75rem, 1.5vw, 1.25rem); }
+.specialArtwork { aspect-ratio: 900 / 506; min-width: 0; overflow: clip; }
+.specialImage { display: block; height: auto; object-fit: cover; object-position: center; width: 100%; }
+.specialCopy { min-width: 0; padding: clamp(0.25rem, 1vw, 0.75rem) clamp(0.25rem, 1vw, 0.75rem) clamp(0.25rem, 1vw, 0.75rem) 0; }
+.specialCopy .specialLabel { color: #d3a96c; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; line-height: 1.4; margin: 0 0 0.5rem; }
+.specialTitle { color: #fff8ed; font-size: clamp(1.5rem, 2.3vw, 2rem); line-height: 1.2; margin: 0 0 0.625rem; overflow-wrap: anywhere; }
+.specialCopy .specialDescription { color: #e0d8ce; font-size: 1rem; line-height: 1.6; margin: 0 0 1rem; }
+.specialLink { align-items: center; background: #8b572d; color: #fff; display: inline-flex; gap: 0.625rem; justify-content: center; min-height: 44px; min-width: 44px; padding: 0.625rem 1rem; text-decoration: none; transition: background-color 160ms ease-out; }
+.specialLink svg { flex: 0 0 auto; }
+.specialLink:hover { background: #9d6235; }
+.specialLink:focus-visible { outline: 2px solid #ffe4b6; outline-offset: 3px; }
+
+@media (max-width: 767px) {
+	.specialVideo { gap: 1rem; grid-template-columns: 1fr; padding: 0.75rem; }
+	.specialCopy { padding: 0.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.specialLink { transition: none; }
+}

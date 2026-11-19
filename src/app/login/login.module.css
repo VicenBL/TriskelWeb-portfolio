@@ -1,0 +1,168 @@
+.main {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 2rem;
+}
+
+.card {
+	background: #171a21;
+	border: 1px solid #2b303b;
+	border-radius: 1rem;
+	max-width: 42rem;
+	padding: 2rem;
+	width: 100%;
+}
+
+.backLink {
+	color: #93c5fd;
+	display: inline-flex;
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	text-decoration: none;
+}
+
+.backLink:focus,
+.backLink:hover {
+	color: #bfdbfe;
+}
+
+.eyebrow {
+	color: #9ca3af;
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	margin: 0 0 1rem;
+	text-transform: uppercase;
+}
+
+.card h1 {
+	font-size: clamp(2rem, 6vw, 4rem);
+	line-height: 1;
+	margin: 0 0 1rem;
+}
+
+.description {
+	color: #d1d5db;
+	font-size: 1.125rem;
+	line-height: 1.7;
+	margin: 0 0 2rem;
+}
+
+.formShell {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.form {
+	display: grid;
+	gap: 1rem;
+}
+
+.field {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.field span {
+	color: #e5e7eb;
+	font-weight: 700;
+}
+
+.field input {
+	background: #0b0d12;
+	border: 1px solid #374151;
+	border-radius: 0.75rem;
+	color: #f9fafb;
+	font: inherit;
+	padding: 0.85rem 1rem;
+}
+
+.field input:focus {
+	border-color: #93c5fd;
+	outline: 3px solid rgb(147 197 253 / 20%);
+}
+
+.primaryButton,
+.secondaryButton {
+	border: 0;
+	border-radius: 999px;
+	cursor: pointer;
+	font: inherit;
+	font-weight: 800;
+	padding: 0.85rem 1.25rem;
+}
+
+.primaryButton {
+	background: #f9fafb;
+	color: #111827;
+}
+
+.secondaryButton {
+	background: #253044;
+	color: #f9fafb;
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.accountPanel {
+	background: #10141d;
+	border: 1px solid #2b303b;
+	border-radius: 1rem;
+	display: grid;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.accountTitle {
+	font-weight: 800;
+	margin: 0;
+}
+
+.accountPanel dl {
+	display: grid;
+	gap: 0.75rem;
+	margin: 0;
+}
+
+.accountPanel dl div {
+	display: grid;
+	gap: 0.25rem;
+}
+
+.accountPanel dt {
+	color: #9ca3af;
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.accountPanel dd {
+	margin: 0;
+	word-break: break-word;
+}
+
+.statusMessage,
+.errorMessage {
+	border-radius: 0.75rem;
+	line-height: 1.5;
+	margin: 0;
+	padding: 1rem;
+}
+
+.statusMessage {
+	background: rgb(34 197 94 / 12%);
+	color: #bbf7d0;
+}
+
+.errorMessage {
+	background: rgb(239 68 68 / 12%);
+	color: #fecaca;
+}

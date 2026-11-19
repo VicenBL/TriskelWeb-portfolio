@@ -1,0 +1,33 @@
+
+
+# Archivos temporales locales
+*~
+*.tmp
+*.temp
+*.bak
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build/test output
+dist/
+coverage/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local database/files
+postgres-data/

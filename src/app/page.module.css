@@ -1,0 +1,72 @@
+.site {
+	--forest: #120c08;
+	--panel: #22120a;
+	--gold-light: #fbe5b2;
+	--gold-muted: #c9b186;
+	--gold: #cc9a55;
+	--section-title-size: clamp(1.8rem, 3.5vw, 3rem);
+	--section-title-gap: clamp(1.25rem, 2vw, 1.75rem);
+	background: var(--forest);
+	color: var(--gold-light);
+	font-family: Helvetica, Arial, sans-serif;
+}
+.site ::selection { background: var(--gold); color: var(--forest); }
+.site :focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+.site section { scroll-margin-top: 1rem; }
+.legacyAnchor { display: block; height: 0; scroll-margin-top: 1rem; }
+.site h2 { font-family: Georgia, "Times New Roman", serif; font-size: var(--section-title-size); font-weight: 400; line-height: 1.2; margin: 0 0 var(--section-title-gap); overflow-wrap: anywhere; }
+.site p { line-height: 1.6; margin: 0; }
+.visuallyHidden { clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.hero { isolation: isolate; overflow: clip; position: relative; width: 100%; }
+.atmosphere { inset: -2rem; position: absolute; z-index: -2; }
+.atmosphere img { filter: blur(22px) brightness(0.65); height: 100%; object-fit: cover; width: 100%; }
+.scene { height: clamp(780px, 95.3125vw, 1229px); margin-inline: auto; max-width: 1280px; position: relative; width: 100%; z-index: -1; }
+.scene picture { display: block; height: 100%; width: 100%; }
+.heroPhoto {
+	display: block;
+	height: 100%;
+	mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+	object-fit: contain;
+	object-position: 50% 0;
+	width: 100%;
+}
+.hero::after { background: linear-gradient(to top, var(--forest), transparent 16%, transparent 85%, rgb(18 12 8 / 38%)); content: ""; inset: 0; pointer-events: none; position: absolute; z-index: -1; }
+/* Compensate the new PNG’s transparent padding, preserving the visible wordmark footprint. */
+.wordmark { --wordmark-width: min(43vw, 620px); --wordmark-top: clamp(110px, 10vw, 145px); height: auto; left: 50%; position: absolute; top: calc(var(--wordmark-top) - var(--wordmark-width) * 0.07927); transform: translateX(-50%); width: calc(var(--wordmark-width) * 1.15543); }
+.heroContent { align-items: center; display: flex; flex-direction: column; gap: 1rem; left: 1rem; position: absolute; right: 1rem; text-align: center; top: min(78svh, calc(100% - 130px)); }
+.heroContent p { color: #fff0cd; font-size: clamp(1rem, 1.4vw, 1.25rem); text-shadow: 0 2px 4px #120c08, 0 0 12px #120c08; text-wrap: balance; }
+.bandAction { align-items: center; background: var(--gold-light); color: var(--forest); display: inline-flex; font-size: 1rem; font-weight: 700; gap: 1.5rem; min-height: 48px; padding: 0.8rem 1.3rem; text-decoration: none; }
+.bandAction:hover { background: #fff0cd; }
+.journey { background: linear-gradient(180deg, #120c08 0%, #1b120c 32%, #21160e 65%, #17100b 100%); }
+.band { align-items: center; display: grid; gap: 6vw; grid-template-columns: 1.15fr 0.85fr; padding: clamp(3rem, 6vw, 5.5rem) max(5vw, calc((100% - 1280px) / 2)); }
+.bandIntroduction p { color: var(--gold-light); font-size: clamp(1rem, 1.35vw, 1.1875rem); line-height: 1.85; max-width: 58ch; text-wrap: pretty; }
+.bandIntroduction p + p { margin-top: 1.25rem; }
+.bandPicture { display: block; mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent), linear-gradient(to bottom, transparent, #000 4%, #000 96%, transparent); mask-composite: intersect; }
+.bandPhoto { display: block; height: auto; width: 100%; }
+.professional p, .shop p { color: var(--gold-muted); font-size: 1.0625rem; max-width: 50ch; }
+.professional { align-items: center; display: grid; gap: 3rem; grid-template-columns: 1fr 1fr; padding: 3.5rem max(5vw, calc((100% - 1280px) / 2)); }
+.professional h2 { margin: 0; max-width: 14ch; }
+.professional .availability { font-size: 0.9375rem; margin-top: 0.75rem; }
+.shop { align-items: baseline; display: flex; gap: 3rem; padding: 2rem max(5vw, calc((100% - 1280px) / 2)) 2.5rem; }
+.shop h2 { margin: 0; }
+.shop p { font-size: 0.9375rem; }
+
+@media (max-width: 700px) {
+	.scene { height: calc(100vw * 1280 / 1081 + 78px); max-width: none; padding-top: 78px; }
+	.scene picture { height: calc(100vw * 1280 / 1081); }
+	.heroPhoto { mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 80%, transparent); }
+	.atmosphere { inset: -1rem; }
+	.atmosphere img { filter: blur(18px) brightness(0.6); }
+	.wordmark { --wordmark-top: 90px; --wordmark-width: 80vw; }
+	.heroContent { gap: 0.7rem; left: auto; margin: -20px 1rem 0; padding-bottom: 22px; position: relative; right: auto; top: auto; }
+	.heroContent p { font-size: 0.9375rem; max-width: 30ch; }
+	.bandAction { font-size: 0.9375rem; min-height: 46px; padding: 0.65rem 1.1rem; }
+	.band { gap: 1.75rem; grid-template-columns: 1fr; padding: 2.5rem 1.25rem 1.5rem; }
+	.bandIntroduction p { font-size: 1rem; line-height: 1.8; }
+	.professional { gap: 1.25rem; grid-template-columns: 1fr; padding: 2rem 1.25rem; }
+	.professional h2 { max-width: 18ch; }
+	.shop { align-items: start; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1.25rem 2rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+	.bandAction { transition: background-color 150ms ease-out; }
+}

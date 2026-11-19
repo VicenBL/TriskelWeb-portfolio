@@ -1,0 +1,54 @@
+.header { align-items: center; background: linear-gradient(rgb(18 12 8 / 85%), rgb(18 12 8 / 20%), transparent); display: flex; gap: 4vw; left: 0; min-height: 104px; padding: 1rem 4vw; position: absolute; top: 0; width: 100%; z-index: 5; }
+.homeLink { align-items: center; display: flex; flex: 0 0 150px; min-height: 44px; }
+.homeLink img { display: block; height: auto; width: 150px; }
+.skipLink { background: #fbe5b2; color: #120c08; left: 1rem; padding: 0.8rem 1rem; position: absolute; top: -5rem; z-index: 6; }
+.skipLink:focus { top: 0.5rem; }
+.desktopNav { align-items: center; display: flex; flex: 1; gap: 1rem; justify-content: space-between; }
+.desktopNav a { align-items: center; display: flex; font-size: 0.9375rem; font-weight: 700; min-height: 44px; text-decoration: none; text-transform: uppercase; }
+.mobileNavigation { display: none; position: relative; }
+.menuToggle { align-items: center; color: #fbe5b2; cursor: pointer; display: flex; gap: 0.75rem; list-style: none; min-height: 44px; padding: 0.5rem; }
+.menuToggle::-webkit-details-marker { display: none; }
+.mobileNavigation:not([open]) > .mobileNavLinks { display: none; }
+.mobileNavigation[open] > .mobileNavLinks { display: grid; }
+.mobileNavLinks { background: #22120a; border: 1px solid rgb(251 229 178 / 30%); max-height: calc(100svh - 90px); overflow-y: auto; padding: 1rem; position: absolute; right: 0; top: calc(100% + 0.75rem); width: min(280px, calc(100vw - 2rem)); }
+.mobileNavLinks a { align-items: center; color: #fbe5b2; display: flex; min-height: 44px; padding: 0.6rem; text-decoration: none; }
+.mobileNavLinks a:hover { background: #321c10; }
+.closeMenu { background: transparent; border: 1px solid #cc9a55; color: #fbe5b2; cursor: pointer; font: inherit; margin-top: 0.75rem; min-height: 44px; padding: 0.5rem; }
+.header :focus-visible, .footer :focus-visible { outline: 2px solid #cc9a55; outline-offset: 4px; }
+.footer { align-items: start; background: #17100b; border-top: 0; color: #c9b186; display: grid; gap: 2rem; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 2.5rem max(5vw, calc((100% - 1280px) / 2)) 2.5rem; position: relative; }
+.footer::before { background: linear-gradient(90deg, transparent, rgb(204 154 85 / 42%) 50%, transparent); content: ""; height: 1px; left: 50%; margin-inline: auto; max-width: 60rem; position: absolute; top: 0; transform: translateX(-50%); width: min(60rem, calc(100% - 2.5rem)); }
+.footer .footerNote { font-size: 0.875rem; line-height: 1.6; max-width: 42ch; }
+.footerNavigation { display: grid; gap: 8rem; grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-inline: auto; max-width: 60rem; width: 100%; }
+.footer nav { align-content: start; display: grid; min-width: 0; }
+.footer .footerHeading { color: #fbe5b2; font-family: Georgia, "Times New Roman", serif; font-size: 1.125rem; font-weight: 400; letter-spacing: 0.02em; line-height: 1.3; margin: 0 0 0.75rem; }
+.footer nav a, .loginLink { align-items: center; display: inline-flex; font-size: 0.9375rem; min-height: 44px; min-width: 44px; overflow-wrap: anywhere; text-underline-offset: 0.25em; }
+.footer a:hover { color: #fbe5b2; text-decoration-thickness: 2px; }
+.footer .footerNote { margin-top: 0.5rem; }
+.footerLegal { align-items: center; border-top: 1px solid rgb(204 154 85 / 28%); display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; grid-column: 1 / -1; padding-top: 1rem; }
+.footerLegal p { font-size: 0.8125rem; }
+.loginLink { color: #c9b186; }
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+	.desktopNav a { isolation: isolate; position: relative; transform-origin: center; }
+	.desktopNav a::before { background: radial-gradient(ellipse at center, rgb(204 154 85 / 32%), rgb(180 103 49 / 18%) 48%, transparent 74%); border-radius: 50%; content: ""; inset: -0.35rem -0.65rem; opacity: 0; pointer-events: none; position: absolute; transform: scale(0.94); z-index: -1; }
+	.desktopNav a:hover::before, .desktopNav a:focus-visible::before { opacity: 1; transform: scale(1.12); }
+	.desktopNav a:hover, .desktopNav a:focus-visible { transform: scale(1.10); }
+	@media (prefers-reduced-motion: no-preference) {
+		.desktopNav a { transition: transform 240ms ease-out; }
+		.desktopNav a::before { transition: opacity 240ms ease-out, transform 240ms ease-out; }
+	}
+}
+
+@media (max-width: 1023px) {
+	.header { justify-content: space-between; min-height: 76px; padding: 0.75rem 1.25rem; }
+	.homeLink { flex-basis: 120px; flex-shrink: 1; min-width: 0; }
+	.homeLink img { width: 100%; }
+	.desktopNav { display: none; }
+	.mobileNavigation { display: block; }
+	.footer { gap: 1.5rem; grid-template-columns: 1fr 1fr; padding: 2rem 1.25rem; }
+}
+@media (max-width: 480px) {
+	.footer { gap: 1rem; grid-template-columns: 1fr; }
+	.footerNavigation { gap: 1.25rem; grid-template-columns: 1fr; }
+	.footerLegal { align-items: start; flex-direction: column; }
+}

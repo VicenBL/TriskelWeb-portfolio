@@ -1,0 +1,25 @@
+.section { background: linear-gradient(180deg, #21160e, #17100b); padding: 2.5rem max(5vw, calc((100% - 1280px) / 2)) 2.75rem; }
+.content { margin-inline: auto; max-width: 72rem; }
+.section .content h2 { color: #fbe5b2; margin: 0 0 0.5rem; text-align: center; }
+.section .subtitle { color: #d8c39d; font-size: 1rem; margin: 0 0 1.25rem; text-align: center; }
+.profiles { display: grid; gap: 0.5rem; grid-template-columns: repeat(12, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+.profiles li { grid-column: span 3; min-width: 0; }
+.profiles li:nth-child(n+5) { grid-column: span 4; }
+@media (min-width: 1200px) {
+	.profiles { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+	.profiles li, .profiles li:nth-child(n+5) { grid-column: span 1; }
+}
+.profiles a { align-items: center; border-radius: 2px; color: #fbe5b2; display: flex; gap: 0.7rem; min-height: 52px; overflow-wrap: anywhere; padding: 0.4rem 0.55rem; text-decoration: none; }
+.icon { color: #e2b36c; flex: 0 0 24px; height: 24px; width: 24px; }
+.profiles a:hover { background: rgb(251 229 178 / 8%); color: #fff0cd; }
+.content :focus-visible { outline: 2px solid #cc9a55; outline-offset: 3px; }
+@media (max-width: 700px) {
+	.section { padding: 2rem 1.25rem 2.25rem; }
+	.profiles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+	.profiles li { grid-column: span 3; }
+	.profiles li:nth-child(n+5) { grid-column: span 2; }
+	.profiles a { flex-direction: column; font-size: 0.875rem; gap: 0.25rem; justify-content: center; min-height: 80px; padding: 0.5rem 0.125rem; text-align: center; }
+}
+@media (prefers-reduced-motion: no-preference) {
+	.profiles a { transition: background-color 140ms ease-out, color 140ms ease-out; }
+}

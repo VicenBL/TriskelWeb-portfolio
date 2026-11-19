@@ -1,0 +1,6 @@
+.document { background: #17100b; color: #fbe5b2; font-family: Arial, sans-serif; line-height: 1.75; min-height: 100vh; overflow-wrap: anywhere; padding: clamp(1.25rem, 5vw, 4rem) max(1.25rem, calc((100% - 68ch) / 2)); }
+.document h1, .document h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.25; }
+.document h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.document h2 { font-size: 1.5rem; margin-top: 2rem; }
+.document a { align-items: center; display: inline-flex; min-height: 44px; }
+.document a:focus-visible { outline: 2px solid #cc9a55; outline-offset: 4px; }
